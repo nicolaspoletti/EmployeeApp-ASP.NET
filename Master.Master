@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="EfficientEnergyEmployees.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Efficient Energy</title>
+    <link rel="stylesheet" type="text/css" href="./Styles/StyleSheet.css"/>
+    <style type="text/css">
+        .auto-style1 {
+            width: 793px;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://images.unsplash.com/photo-1589691962030-8d2b7f2a1ffe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+    <script>
+        $(function () {
+            $(".datepicker").datepicker("option", "dateFormat", $(this).val());
+        });
+    </script>
+    <form id="form1" runat="server" style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%); z-index: 1;">
+        <div id="wrapper">      
+            <div id="banner"></div>
+            <div id="navigation">
+                <ul id="nav" style="margin-left: 144px;">
+                    <li id="liHome"><a href="~/UI/Home.aspx" runat="server">Home</a></li>
+                    <li id="liManagers"><a href="/UI/Manager.aspx"">Managers</a></li>
+                    <li id="liDepartments"><a href="/UI/Department.aspx"">Departments</a></li>
+                    <li id="liUsers"><a href="/UI/User.aspx"">Users</a></li>
+                        <ul>
+                            <li><a href="/UI/UserManagement.aspx">User Management</a></li>                      
+                        </ul>
+                     </li>
+                </ul>
+            </div>
+            <asp:Label ID="lblLoginType" runat="server" Text="Login as: "></asp:Label>
+            <asp:Label ID="lblLoginTypeValue" runat="server" Text="Admin" Font-Bold="True"></asp:Label>
+        <div id="content_area" class="auto-style1" style="margin-left: 284px;" >
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >              
+            </asp:ContentPlaceHolder>
+        </div>           
+        <div id="footer">
+            <p>Nicolas Poletti</p>
+        </div>
+        </div>        
+    </form>
+</body>
+</html>
